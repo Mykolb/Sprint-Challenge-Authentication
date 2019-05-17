@@ -1,6 +1,7 @@
 const axios = require('axios');
 const db = require('./routes-model');
 const { authenticate } = require('../auth/authenticate');
+const secrets = require('../config/secrets');
 //add import for hash 
 const bcrypt = require('bcryptjs');
 //import json token and secrets file 
@@ -8,8 +9,8 @@ const jwt = require('jsonwebtoken');
 
 
 module.exports = server => {
-  server.post('/api/register', register);
-  server.post('/api/login', login);
+  server.post('/api/authenticate/register', register);
+  server.post('/api/authenticate/login',  login);
   server.get('/api/jokes', authenticate, getJokes);
 };
 
@@ -82,7 +83,7 @@ const generateToken = user => {
   const options = {
       expiresIn: '72h'
   }
-  return jwt.sign(payload, jwtKey, options); 
+  return jwt.sign(payload, secrets.jwtKey, options); 
 }
 
 
