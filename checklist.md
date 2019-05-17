@@ -11,8 +11,8 @@
     "server": "nodemon index.js", (auto updates server)
     "start": "node index.js"
   },
-[] install yarn add express-session
-[] yarn add connect-session-knex
+[x] install yarn add express-session
+[x] yarn add connect-session-knex
 [x] yarn add cors (to connect to react app)
 [x] yarn add jsonwebtoken
 [x] npx gitignore node (to create a gitignore file)
