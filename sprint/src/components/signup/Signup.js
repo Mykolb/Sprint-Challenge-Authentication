@@ -30,7 +30,7 @@ signup = event => {
     .then(res => {
         console.log(res)
         localStorage.setItem('jwt', res.data.token);
-        this.props.history.push('/users');
+        this.props.history.push('/login');
     })
     .catch(err => {
         console.log(err)
@@ -49,14 +49,6 @@ render() {
         name='username'
         onChange={this.onChange}
         value={this.state.username}
-        />
-         &nbsp;   &nbsp;   &nbsp;  
-        <input
-        type='text'
-        placeholder='department'
-        name='department'
-        onChange={this.onChange}
-        value={this.state.department}
         />
          &nbsp;   &nbsp;   &nbsp;  
         <input
